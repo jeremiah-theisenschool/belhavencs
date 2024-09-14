@@ -1,0 +1,46 @@
+---
+title: "B2"
+author: "Jeremiah Theisen"
+date: "2024-08-27"
+output: pdf_document
+---
+
+## Activity 1.2.1
+
+a.  The population is the Berkeley undergraduates. The study is aiming for all people, but being a college, the pool of samples will not represent the entire population, and college students will probably be of higher social status than average.
+
+b.  The sample is the 129 chosen students.
+
+## Activity 1.2.2
+
+a.  The population is all births in Southern California.
+
+b.  The sample is all births in Southern California between 1989 and 1993.
+
+## Activity 1.2.4
+
+1.  It is easy, and reasonably accurate to the entire population, but it might be skewed by the nature of random chance.
+
+2.  It is convenient and easy, but this will be severely skewed towards students who need help.
+
+3.  This will be skewed, especially among freshmen who may be nervous about math. This would be fairly convenient, especially if you are a Math major.
+
+4.  This will be skewed as seniors do not represent the whole population.
+
+5.  This would best represent the entire population, but would be difficult to set up.
+
+6.  This will be skewed as different classes are more stressful, but this is convenient.
+
+## Activity 1.2.5
+
+1.  Stratified Random Sampling
+
+2.  Cluster Sampling
+
+3.  Stratified Random Sampling
+
+4.  Multi-Stage Sampling
+
+5.  Random Sampling
+
+6.  Convenience Sampling

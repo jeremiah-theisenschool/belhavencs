@@ -1,0 +1,160 @@
+---
+title: "P2"
+author: "Jeremiah Theisen"
+date: "2024-09-10"
+output: pdf_document
+--- 
+```{r} 
+loans = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/loans_full_schema.csv")
+
+names(loans)
+```
+## 2.2.1 
+a. 
+```{r}  
+roll=sample(1:6,20,replace=TRUE)
+
+roll
+```
+3 4 4 3 4 3 3 4 3 2 6 2 4 5 2 6 5 1 4 5
+b. A = {4, 4, 4, 4, 2, 6, 2, 4, 2, 6, 4} = 11
+c. {4, 4, 4, 4, 6, 4, 6, 4} = 8
+d. B = {4, 4, 4, 4, 6, 4, 5, 6, 5, 4, 5} = 11
+e. {4, 4, 4, 4, 6, 4, 6, 4} = 8
+f. 0.55
+g. 0.727
+h. 0.55
+i. 0.727
+j. {4, 4, 4, 4, 6, 4, 6, 4} = 8
+
+## 2.2.2
+a. B = {4, 5, 6} = 3
+A = {2, 4, 6} = 3
+
+b. {4, 6} = 2
+
+c. 2/3 
+d. P(A) = 1/2. 1/3 chance for one that satisfies A and B. The chances of getting one that does not satify both is the same as the chance of getting one that satisfies both.
+
+## 2.2.3 
+a. P(A) = 1/2, P(B) = 1/2, P(A and B) = 1/3
+b. P(A|B) = 2/3 Calculation: (1/3 / 1/2)
+c. 2/3 is the same probability I got in 2.2.2.c
+
+## 2.2.4 
+a. 
+```{r}
+roll=sample(1:6,1000,replace=TRUE)
+
+hist(roll)
+```
+b. 
+```{r}
+B=subset(roll, roll>3)
+
+hist(B)
+```
+c. 
+```{r}
+length(B)
+```
+d. 
+```{r}
+length(which(B%%2==0))
+```
+e. 0.668
+f. It is very close
+
+## 2.2.5 
+a. R = 20%, C = 25%, R and C = 30%. Since P(R and/or C) = 30%, there must be a 15% overlap. R but not C = 5% and C without R = 10%.
+b. 10%
+c. 5%   
+
+## 2.2.6 
+a.
+```{r}
+length(which(loans$homeownership=="OWN"))
+```
+b. 0.1353
+c. 
+```{r}
+gradeAloans=subset(loans, loans$grade=="A")
+nrow(gradeAloans)
+```
+d.
+```{r}
+length(which(gradeAloans$homeownership=="OWN"))
+```
+e. 0.1411
+f. 
+```{r}
+index = sample(1:nrow(loans), 1000)
+samp=loans[index,]
+
+table(samp$grade,samp$homeownership)
+```
+35/140 = 0.25
+
+## 2.2.7  
+a. (5, x), where x does not matter because it is the green dice
+b. P(A) = 6/36 = 1/6 
+c. (x, 2|4|6)
+d. P(B) = 18/36 = 1/2
+e. (5, 2), (5, 4), (5, 6), P(A and B) = 3/36 = 1/12
+f. P(A|B) = 1/12 / 1/2 = 2/12 = 1/6
+g. The probability does not appear to be affected
+
+## 2.2.8 
+a. 
+```{r}
+bluedie = sample(1:6, 1000, replace = TRUE)
+greendie = sample(1:6, 1000, replace = TRUE)
+
+doubledie=data.frame(bluedie, greendie)
+
+head(doubledie, n=10)
+```
+b.
+```{r}
+length(which(doubledie$bluedie==5))
+```
+P(A) = 0.162
+
+c.
+```{r}
+length(which(doubledie$greendie%%2==0))
+```
+P(B) = 0.481
+d.
+```{r}
+greendieeven=subset(doubledie, doubledie$greendie%%2==0)
+
+head(greendieeven, n=10)
+```
+e.
+```{r}
+length(which(greendieeven$bluedie==5))
+```
+P(A and B) = 0.073, P(A|B) = 0.152
+
+## 2.2.9 
+a. Yes, because P(A|B) = P(A and B), P(A and B) = P(A)P(B)
+b. No. P(A) and P(B) overlap too much.
+c. Maybe. The proportion of homeowners with the loan, vs the proportion of people who got grade A loans total are very close (0.141 vs 0.135), but is not be close enough to state definitely.
+d. Yes, P(A|B) = P(A), P(A and B) = P(A)P(B)
+
+## 2.2.10  
+a. Suppose what?
+b. P(S) = 0.25
+c. P(A) = 0.077
+d. P(S and A) = 0.019
+e. Yes, P(S and A) = P(A)P(S) and P(A) = 1/13 and P(A|S) = 1/13
+f. It would be dependent.If you drew an ace, the chance would be 3/51, if not, 4/51
+
+
+## 2.2.11 
+a. It would be independent because the provious draw has no way of effecting the outcome of the second draw, since the card has been placed back in the deck and reshuffled.
+b. 0.25
+c. 0.25
+d. 0.0625
+e. 0.0059
