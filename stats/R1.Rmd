@@ -1,0 +1,51 @@
+---
+title: "R1"
+author: "Jeremiah Theisen"
+date: "2024-09-14"
+output: pdf_document
+---
+
+## 7.1.1
+```{r}
+possum = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/possum.csv")
+
+names(possum)
+``` 
+
+a.
+```{r}
+plot(possum$skull_w, possum$head_l, pch=19)
+```
+b.The 62mm skull would be predicted to have a longer head 
+
+c.53mm skull would be around 87mm long. 62mm skull would be around 96mm long. I would feel fairly confident that they would line up that way, but the exact numbers would be off by a bit.  
+
+d.55mm. Very confident because there seems to be a large cluster at 55mm. 
+
+## 7.1.2 
+a. c and f have strong linear relationships. 
+
+## 7.1.3
+a. R = 0.35
+b. R = -0.97
+c. R = 0 
+d. R = 0.65
+e. R = -0.38
+f. R = -0.85
+g. R = 0.99
+h. the same graph as f. 
+i. R = 0.85
+
+## 7.1.4
+I would say (b) is the best fit 
+
+## 7.1.5 
+a. 
+https://www.desmos.com/calculator/lbg4ya4vwx
+
+b. It fits a lot better than it did before. 
+
+## 7.1.6 
+
+## 7.1.7
+
