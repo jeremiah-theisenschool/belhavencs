@@ -4,5 +4,97 @@ author: "Jeremiah Theisen"
 date: "2024-09-14"
 output: pdf_document
 ---
+```{r}
+smallpox = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/smallpox.csv")
 
-## 2.3.1
+names(smallpox) 
+```
+
+## 2.3.1  
+a. (C) = 70
+b. (S|C) = 56
+c. (!S|C) = 14
+d. (!C) = 30
+e. (S|!C) = 12
+f. (!S|!C) = 18
+g. Venn Diagram 
+h. (S) = 68
+i. P(S) = 0.68
+j. P(C|S) = 0.824
+k. P(!C|!S) = 0.5625
+
+## 2.3.2
+a. 
+```{r}
+cream = sample(c("cream", "no cream"), 100, replace = TRUE, prob = c(0.7, 0.3))
+```
+b. 
+```{r} 
+sugar = rep(NA, 100)
+
+for(i in 1:100){
+  if(cream[i]=="cream"){
+    sugar[i]=sample(c("sugar", "no sugar"), 1, replace = TRUE, prob = c(0.8, 0.2))
+  }
+  else{
+    sugar[i]=sample(c("sugar", "no sugar"), 1, replace = TRUE, prob = c(0.4, 0.6))
+  }
+}
+
+sugar
+```
+c. 
+```{r}
+table(cream,sugar)
+```
+
+d. The values are off, but close enough given the sample size.
+
+## 2.3.3  
+a. P(S) = 68, this is the same value calculated earlier
+b. P(S) = 0.48
+c. P(S) = 0.6
+d. P(S)  = 0.4
+e. P(S) = 0.8
+f. The visuals tell me that as P(C) goes up, so does P(S), as P(S|C) is higher than P(S|!C). The values of X line up well.
+
+## 2.3.4  
+a. P(Z|S)
+b. P(Z|!S)
+c. P(Z)
+d. 
+e. 
+https://www.desmos.com/calculator/rlpqyoc2qb
+
+
+## 2.3.5 
+a. p(innoculated) = 0.0392
+```{r}
+length(which(smallpox$inoculated=="yes"))
+```
+b. P(N) = 0.96
+```{r}
+inocpatients=subset(smallpox, smallpox$inoculated=="yes")
+notinocpatients=subset(smallpox, smallpox$inoculated=="no")
+nrow(notinocpatients)
+```
+c. P(D|I) = 0.024
+```{r}
+length(which(inocpatients$result=="died"))
+```
+d. P(D|N) = 0.1411
+```{r}
+length(which(notinocpatients$result=="died"))
+```
+e. P(I|D) = 6.898 * 10^-3, 0.0007
+f. 
+```{r}
+diedpatients=subset(smallpox, smallpox$result=="died")
+nrow(diedpatients)
+```
+g. 
+```{r}
+length(which(diedpatients$inoculated=="yes"))
+``` 
+
+P(I|D) = 7.06 * 10^-3; 0.0007. This is the same as was calculated earlier when simplified. Given how many decimal places were involved with the earlier equation, I would say that this is close enough.
