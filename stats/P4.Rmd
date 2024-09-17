@@ -1,0 +1,71 @@
+---
+title: "P4"
+author: "Jeremiah Theisen"
+date: "2024-09-17"
+output: pdf_document
+---
+## 2.4.1
+a. 105
+b. $11785
+c. $117.85 
+
+## 2.4.2 
+a. P(X = 0) = 20
+b. P(X = 137) = 55
+c. P(X = 170) = 25
+d. E(X) = 117.85, which is the same as the answer in c.
+e. 
+```{r}
+textbookpurchases = sample(c(0, 137, 170), 100, replace = TRUE, prob = c(0.2, 0.55, 0.25))
+hist(textbookpurchases)
+```
+f. This number is off by 10. This is off from what I expected by a bit.
+107.65
+```{r}
+mean(textbookpurchases)
+```
+g. The mean was off by 1. This is closer to what we calculated
+118.4781
+```{r}
+textbookpurchases = sample(c(0, 137, 170), 10000, replace = TRUE, prob = c(0.2, 0.55, 0.25))
+hist(textbookpurchases)
+mean(textbookpurchases)
+```
+
+## 2.4.3 
+a. mean = 3.5. E(X) = 3.5, variance = 2.5
+b. 
+```{r}
+dierolls = sample(c(1, 2, 3, 4, 5, 6), 1000, replace = TRUE, prob = c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6))
+hist(dierolls)
+```
+c. 
+```{r}
+mean(dierolls)
+var(dierolls)
+```
+
+
+## 2.4.4 
+
+## 2.4.5 
+
+## 2.4.6 SKIP
+
+## 2.4.7 
+a. Xi = -2, 3, 98, 9998
+b. P(X = -2) = .7989, P(X = 3) = 0.2, P(X = 98) = 0.001, P(X = 9998) = 0.00001
+c. E(X) = -0.79982, Var(X) = 
+d. They make money 
+e.  
+```{r}
+ticketwinnings = sample(c(-2, 3, 98, 9998), 1000000, replace = TRUE, prob = c(0.7989, 0.2, 0.001, 0.0001))
+hist(ticketwinnings)
+```
+f. 
+mean: 0.06654
+var: 9710.456
+```{r}
+mean(ticketwinnings) 
+var(ticketwinnings) 
+```
