@@ -33,13 +33,14 @@ mean(textbookpurchases)
 ```
 
 ## 2.4.3 
-a. mean = 3.5. E(X) = 3.5, variance = 2.5
+a. mean = 3.5. E(X) = 3.5, variance =  2.917 
 b. 
 ```{r}
 dierolls = sample(c(1, 2, 3, 4, 5, 6), 1000, replace = TRUE, prob = c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6))
 hist(dierolls)
 ```
 c. 
+It is close but off by a bit.
 ```{r}
 mean(dierolls)
 var(dierolls)
@@ -47,15 +48,21 @@ var(dierolls)
 
 
 ## 2.4.4 
+a. The E(X) is similar to the mean. The main difference in how they are calculated is that the expected outcome takes probability into account, and is a bit more complcated. I believe that means that the expected value would be less skewed by large outliers.
+b. They are similar because they both measure variation, just different types. They both have a number squared in them.
 
 ## 2.4.5 
+a. Everything is 1/6th
+b. E(x) = 3.5 
+c. Var(X) = 2.914 
+d. These are close to the numbers in the other exercises, the variance can be explained by human error for a and b and random error for a, along with using a different formula.
 
 ## 2.4.6 SKIP
 
 ## 2.4.7 
 a. Xi = -2, 3, 98, 9998
 b. P(X = -2) = .7989, P(X = 3) = 0.2, P(X = 98) = 0.001, P(X = 9998) = 0.00001
-c. E(X) = -0.79982, Var(X) = 
+c. E(X) = -0.79982, Var(X) = 1016.117
 d. They make money 
 e.  
 ```{r}
