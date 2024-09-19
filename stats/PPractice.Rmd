@@ -1,0 +1,42 @@
+---
+title: "PPractice"
+author: "Jeremiah Theisen"
+date: "2024-09-19"
+output: pdf_document
+---
+
+```{r}
+names(chickwts)
+``` 
+## P1 
+1. 
+a. 
+```{r}
+length(which(chickwts$feed=="soybean"))
+length(which(chickwts$feed=="meatmeal"))
+``` 
+b. P(M) = 11/71 = 0.155
+P(S) = 14/71 = 0.197
+
+c. 
+```{r}
+index = sample(1:nrow(chickwts), 20)
+samp=chickwts[index,]
+table(samp$feed)
+``` 
+d. P(M) = 5/20 = 0.25
+P(S) = 4/20 = 0.2 
+
+e. The sample has a higher proportion of both. 
+
+## P2 
+2. 
+a. 26/52 => 1/2 
+b. 16/52 => 4/13
+c. 8/52 
+d. P(R) = 26/52, P(F) = 16/52. P(R) * P(F) = 416/2704 = 8/52 = P(R and F) = 8/52. P(A|B) = (8/52)/(16/52) = 8/52 * 52/16 => 8/16 => 1/2 = P(R).
+
+
+## P3
+
+
