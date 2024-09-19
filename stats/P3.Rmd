@@ -62,9 +62,8 @@ f. The visuals tell me that as P(C) goes up, so does P(S), as P(S|C) is higher t
 a. P(Z|S)
 b. P(Z|!S)
 c. P(Z)
-d. 
-e. 
-https://www.desmos.com/calculator/rlpqyoc2qb
+d. SKIP
+e. SKIP
 
 
 ## 2.3.5 
@@ -97,4 +96,4 @@ g.
 length(which(diedpatients$inoculated=="yes"))
 ``` 
 
-P(I|D) = 7.06 * 10^-3; 0.0007. This is the same as was calculated earlier when simplified. Given how many decimal places were involved with the earlier equation, I would say that this is close enough.
+P(I|D) = 7.06 * 10^-3; 0.0007. This is the same as was calculated earlier when simplified. Given how many decimal places were involved with the earlier equation, I would say that this is close enough. I did the calculation for e twice and got a similar number both times.

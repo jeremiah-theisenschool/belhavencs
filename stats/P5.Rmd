@@ -8,12 +8,54 @@ output: pdf_document
 a. Y = 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
 b. P(Y = 2) = 1/36, P(Y = 3) = 2/36, P(Y = 4) = 3/36, P(Y = 5) = 4/36, P(Y = 6) = 5/36, P(Y = 7) = 6/36, P(Y = 8) = 5/36, 
 P(Y = 9) = 4/36, P(Y = 10) = 3/36, P(Y = 11) = 2/36, P(Y = 12) = 1/12
-c. 
+c. E(Y) = 7, Var(Y) = 5.94. These numbers are a bit different from the numbers in the other problem, but fit their data in the same way. Interestingly, the mean and the median are almost the same in both data sets. 
 d. 
-e.
+```{r}
+bluedierolls = sample(c(1, 2, 3, 4, 5, 6), 1000, replace = TRUE, prob = c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6))
+greendierolls = sample(c(1, 2, 3, 4, 5, 6), 1000, replace = TRUE, prob = c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6))
+diesum=bluedierolls+greendierolls
+hist(diesum)
+```
+e. These are extremely close to what I calculated
+```{r}
+mean(diesum)
+var(diesum)
+```
 
 ## 2.5.2 
+a. E(Xb - Xg) = 0
+b. Var(Xb - Xg) = 5.828
+c. 
+```{r}
+bluedierolls = sample(c(1, 2, 3, 4, 5, 6), 1000, replace = TRUE, prob = c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6))
+greendierolls = sample(c(1, 2, 3, 4, 5, 6), 1000, replace = TRUE, prob = c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6))
+diediff=bluedierolls-greendierolls
+hist(diediff)
+```
+d.
+```{r}
+mean(diediff) 
+var(diediff)
+```
+They are close but off by a bit due to randomness/miscalculation.
 
 ## 2.5.3 SKIP 
 
-## 2.5.4
+## 2.5.4 
+a. Var(B) = 4, E(B) = 60
+b. Var(S) = 0.0225, E(S) = 3
+c. Var(R) = 4.045, E(R) = 54
+d.  
+```{r}
+boxoz=rnorm(1000, mean = 60, sd = 2)
+scooponeoz=rnorm(1000, mean = 2, sd = .15)
+scooptwooz=rnorm(1000, mean = 2, sd = .15)
+
+remainicecream=boxoz-scooponeoz-scooptwooz
+hist(remainicecream)
+```
+e. The numbers are off, but they are close enough, especially given the somewhat large variations.
+```{r}
+mean(remainicecream)
+var(remainicecream)
+```
