@@ -1,0 +1,69 @@
+---
+title: "PTest"
+author: "Jeremiah Theisen"
+date: "2024-09-24"
+output: pdf_document
+---
+
+```{r}
+quakes 
+names(quakes)
+```
+## P1 
+1.
+a.
+```{r}
+length(which(quakes$mag==4.1))
+length(which(quakes$mag==4.2))
+``` 
+b. 
+P(4.1) = 55/800 = 0.06875
+P(4.2) = 90/800 = 0.1125
+c. 
+``` {r}
+index = sample(1:nrow(quakes), 100)
+
+samp=quakes[index,]
+
+ 
+table(samp$mag)
+```
+
+d. 
+P(4.1|S) = 3/100 = 0.03
+P(4.2|S) = 6/100 = 0.06 
+The sample probabilities for 4.1 and 4.2 are both lower than for the entire population. 
+
+## P2 
+2.
+a. P(C) = 13/52 => 1/4 => 0.25 
+b. P(F10) = 16/52 => 4/13 => 0.3077 
+c. P(C and F10) => 4/52 => 1/13 => 0.0769 
+d. Independent because 
+P(F10|C) = 0.0769/0.25 = 0.3077 = P(F10) 
+P(C and F10) = 0.0769 = (0.25)(0.3077) = P(C)P(B)  
+e. If you drew a card, and the first card was a club, the chance of drawing a club would be 12/51. This is dependent on the first event, since if the first card drawn was not a club, the chance of the second card being a club would be 13/51 which is not the same as 12/51. 
+
+## P3 
+3. P(B) = 2.75? 
+(I know this is impossible, but I ran the algebra multiple times and this is what I got)
+
+## P4 
+4. 
+a. 
+-5, 3, 45, 9995 
+b. E(X) = -1.14 
+c. 
+```{r}
+ticketwinnings = sample(c(-5, 3, 45, 9995), 1000000, replace = TRUE, prob = c(0.73999, 0.22, 0.04, 0.00001))
+
+hist(ticketwinnings)
+```
+d.
+```{r}
+mean(ticketwinnings)
+```
+This is off from my calculation by 0.071, which is not a lot. 
+
+## P5 
+5. E(Z) = 1.51

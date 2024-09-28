@@ -1,0 +1,64 @@
+---
+title: "D1"
+author: "Jeremiah Theisen"
+date: "2024-09-26"
+output: pdf_document
+---
+
+## 3.1.1 
+a. The peak is at 0, the mean for normal distribution. 
+b. Positive values decrease, negative values also decrease.
+c. The height decreases as it moves away from 0 
+d. Bulk of area is in the middle 
+e. This is almost the same as the standard normal distribution
+```{r}
+standarnorm=rnorm(1000000, mean = 0, sd = 1)
+
+hist(standarnorm, breaks = 50, density = TRUE)
+``` 
+## 3.1.2 SKIP 
+
+## 3.1.3 SKIP 
+
+## 3.1.4 SKIP 
+
+## 3.1.5 
+a. 
+```{r}
+pnorm(2, mean=0, sd=1)
+```
+b.
+```{r}
+pnorm(0.5, mean=0, sd=1)
+```
+c. 
+P(0.5 < Z < 2) = 0.9772499 - 0.6914625 = 0.2857874 
+
+d.
+```{r}
+pnorm(1.5, mean=0, sd=1)
+``` 
+e. 
+P(Z > 1.5) = 0.066072 
+
+f. 
+```{r}
+qnorm(0.35, mean=0, sd=1)
+``` 
+g. 0.88 
+
+h.
+```{r}
+qnorm(0.88, mean=0, sd=1)
+``` 
+i.
+```{r}
+qnorm(0.2, mean=0, sd=1)  
+qnorm(0.8, mean=0, sd=1)
+pnorm(0.8416212, mean=0, sd=1)
+```  
+P(Z < Z2) = 0.8
+z2 = 0.8416212
+
+
+
