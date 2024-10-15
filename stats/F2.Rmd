@@ -1,0 +1,23 @@
+---
+title: "F2"
+author: "Jeremiah Theisen"
+date: "2024-10-10"
+output: pdf_document
+---
+
+## 4.2.1 
+a.
+```{r} 
+pnorm(1.96, mean=0, sd=1) - pnorm(-1.96, mean=0, sd=1)
+``` 
+b.
+
+x = 1.96*sqrt((p(1-p))/n) + p
+
+## 4.2.2 
+
+## 4.2.3 
+
+## 4.2.4 
+
+## 4.2.5

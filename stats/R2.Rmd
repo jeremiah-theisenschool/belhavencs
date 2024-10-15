@@ -1,0 +1,8 @@
+---
+title: "R2"
+author: "Jeremiah Theisen"
+date: "2024-10-15"
+output: pdf_document
+---
+
+

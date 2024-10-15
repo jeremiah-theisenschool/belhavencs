@@ -1,0 +1,64 @@
+---
+title: "D3"
+author: "Jeremiah Theisen"
+date: "2024-10-01"
+output: pdf_document
+---
+
+## 3.3.1
+a. 
+eggs - coffee 
+eggs - juice 
+sausage - coffee 
+sausage - juice 
+pancakes - coffee 
+pancakes - juice
+
+b. 6 
+
+## 3.3.2 
+a. 144
+b. 108
+c. 420 added + 1 to every probability, as skipping counts as an extra option
+d. 6x2x52 = 624
+
+## 3.3.3 
+a. 20 
+b. 60 
+c. 120 
+d. 120 
+e. SKIP 
+f. It got the same numbers. 
+
+## 3.3.4 
+a. 6! = 720
+b. 657720
+c. 151200
+ 
+ 
+## 3.3.5
+a. 
+(WXY) (XYZ) (WYZ) (WXZ)
+(WYX) (XZY) (WZY) (WZX)
+(XWY) (ZXY) (ZWY) (XWZ)
+(XYW) (ZYX) (ZYW) (XZW)
+(YWX) (YXZ) (YZW) (ZXW)
+(YXW) (YZX) (YWZ) (ZWX) 
+
+b. Four different groups 
+c. Six arrangements in each group 
+d. Four 
+e. It got the same answers.
+
+## 3.3.6 
+a. 27405  
+b. 210
+c. 210
+d. The answers were the same because the two combinations are equivalent. 
+
+## 3.3.7 
+a. Possibly permutation, depends on if shirt is picked for certain days
+b. Combination
+c. Combination
+d. Permutation
+

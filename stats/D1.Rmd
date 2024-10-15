@@ -50,7 +50,10 @@ g. 0.88
 h.
 ```{r}
 qnorm(0.88, mean=0, sd=1)
-``` 
+```  
+```{r} 
+pnorm(0, mean=0, sd=1)
+```
 i.
 ```{r}
 qnorm(0.2, mean=0, sd=1)  

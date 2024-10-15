@@ -1,0 +1,86 @@
+---
+title: "D4"
+author: "Jeremiah Theisen"
+date: "2024-10-01"
+output: pdf_document
+---
+
+## 3.4.1 
+a. 0.0081
+b. 0.0081
+c. They are all the same
+d. 6
+
+## 3.4.2 
+a. The variables are not independent
+b. There is not a fixed probability of success in each trial
+c. Does not have a fixed number of trials
+
+## 3.4.3 
+a. 0.0468
+b.
+```{r}
+numbaskets = rep(0, 1000)
+
+freethrows=4
+p=0.9
+
+for(i in 1:freethrows){
+  numbaskets=numbaskets+sample(c(1, 0), 1000, replace = TRUE, prob = c(p, 1-p)) 
+}
+hist(numbaskets)
+print(freethrows)
+```
+c.
+```{r}
+length(which(numbaskets==2))
+``` 
+It is very close
+d. 0.3369
+e.  
+```{r}
+numbasketsTM = rep(0, 1000)
+
+freethrows=5
+p=0.65
+
+for(i in 1:freethrows){
+  numbasketsTM=numbasketsTM+sample(c(1, 0), 1000, replace = TRUE, prob = c(p, 1-p)) 
+}
+hist(numbasketsTM)
+print(freethrows)
+```
+f. 
+```{r}
+length(which(numbasketsTM==3))
+``` 
+This is very close to what I calculated
+
+## 3.4.4 SKIP
+
+## 3.4.5 
+a. A little less than 4. 
+
+b. 
+P(X = 0) = 0.001
+P(X = 1) = 0.00015 
+P(X = 2) = 0.00405 
+P(X = 3) = 0.09
+P(X = 4 = 0.6561 
+
+c. E(X) = np 
+E(X) = 4(0.9)
+E(X) = 3.6  
+
+d. Var(X) = np(1-p) = 0.36 
+e.
+```{r}
+mean(numbaskets)
+``` 
+f. 
+```{r}
+var(numbaskets)
+```
+
+
+## 3.4.6 SKIP

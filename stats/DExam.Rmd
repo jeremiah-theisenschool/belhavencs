@@ -1,0 +1,119 @@
+---
+title: "DExam"
+author: "Jeremiah Theisen"
+date: "2024-10-08"
+output: pdf_document
+---
+
+## D1 
+1. 
+a. 
+```{r}
+pnorm(1.3, mean=0, sd=1)
+```
+b.  
+```{r} 
+pnorm(-0.7, mean=0, sd=1)
+```
+c. 
+0.903 - 0.242 = 0.661
+
+d.
+1 - 0.903 = 0.097
+
+e.
+```{r}
+qnorm(0.28, mean=0, sd=1)
+``` 
+f. 1 - 0.15 = 0.85 
+
+g.
+```{r}
+qnorm(0.15, mean=0, sd=1)
+``` 
+h. 0.09 for both 
+
+i. 
+```{r}
+qnorm(0.09, mean=0, sd=1)
+``` 
+## D2 
+2. 
+a. 43 homeruns above 
+b. 5.375 standard deviations 
+c. z-score = (x - mean) / standard deviation 
+z = 5.375  
+```{r}
+pnorm(5.375, mean=0, sd=1) 
+pnorm(58, mean=15, sd=8) 
+```
+
+3. 
+a. 
+```{r}
+pnorm(20, mean=15, sd=8)
+``` 
+1 - 0.734 = 0.266 
+
+b. 
+```{r} 
+qnorm(0.90, mean=15, sd=8)
+``` 
+c.
+```{r}
+pnorm(20, mean=15, sd=8)
+pnorm(25, mean=15, sd=8)
+``` 
+0.16 
+
+d.
+```{r}
+qnorm(0.05, mean=15, sd=8)
+qnorm(0.95, mean=15, sd=8)
+``` 
+k = 13.1588 
+
+## D3 
+4. 
+a. Assuming that you are picking a shirt for each day, so order matters, P(12, 7) = 12!/5! = 3991680 
+b. When buying ice cream, the order does not matter C(15, 4) = 1365 
+c. Order does not matter for when a card is in your hand C(52, 2) = 1326 
+d. Since there are 10 different people, order matters, since it determines who gets which card, so P(52, 10) = 5.7407 * 10^16 
+
+## D4 
+5. 
+a. 0.32
+b.
+```{r}
+numbaskets = rep(0, 1000)
+
+ 
+
+freethrows=2
+
+p=0.8
+
+ 
+
+for(i in 1:freethrows){
+
+  numbaskets=numbaskets+sample(c(1, 0), 1000, replace = TRUE, prob = c(p, 1-p))
+
+}
+
+hist(numbaskets)
+
+print(freethrows)
+```
+c. 
+```{r}
+length(which(numbaskets==1))
+``` 
+This is very close to what I calculated 
+
+## D5 
+6. 
+a. E(X) = np 
+b. Var(X) = np(p-1) 
+
+7. Binomial distributions and Normal distributions appear very similar, they are not directly related but sometimes can be used to approximate the other.
