@@ -5,4 +5,96 @@ date: "2024-10-15"
 output: pdf_document
 ---
 
+## 7.2.1 
+```{r}
+possum = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/possum.csv")
+possummod=lm(head_l~skull_w, data=possum)
+print(possummod)
+print(cor(possum$skull_w, possum$head_l))
+plot(possum$skull_w, possum$head_l,  pch=19)
+abline(possummod, col="red")
+``` 
+a. Moderate 
+b. 71% 
+c. 89.3441 
+d. 96.78 
+e. 56.15 
+f. mm/cm 
+g. 0.8158 
+
+## 7.2.2 
+a.
+b. R2 = 0.5448, R = -0.7381, there is a weak negative relationship
+c. 54% 
+d. The regression line measures age/price of the cars 
+e. The slope represents how much more or less the car would cost as the car ages 
+f. $5149 
+g. 6.34 years old 
+
+## 7.2.3
+```{r}
+mtl = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/mtl.csv")
+
+names(mtl)
+```
+a. 
+```{r}
+plot(mtl$sitting, mtl$total, pch=19)
+```
+b. 
+```{r}
+mtlmod=lm(total~sitting, data=mtl)
+```
+c. 
+```{r}
+cor(mtl$sitting, mtl$total)
+```
+d. 
+```{r}
+plot(mtl$sitting, mtl$total,  pch=19)
+abline(mtlmod, col="red")
+```
+e.
+```{r}
+summary(mtlmod)
+``` 
+f. R = 0.4, weak relationship. 
+g. 15% 
+h. The relationship between MLT Thickness and hours sitting. 
+i. How thick the MLT is from hours sitting. 
+j. 2.425 
+k. 7.22 
+
+## 7.2.4
+a. No, because those are not actually causally related
+b. Both would sell better in the summer, which both are causally related 
+
+## 7.2.5
+a. 117.24 inches 
+b. Because most people do not grow to be that tall, growth slows down after 12-16ish 
+
+## 7.2.6
+a. 
+```{r}
+n=10
+X=runif(n, 0, 10)
+Y=runif(n, 0, 10)
+mod=lm(Y~X)
+print(cor(X, Y))
+plot(X, Y, pch=19)
+abline(mod)
+``` 
+0.5 was the highest value I got. 
+
+b. 
+```{r}
+n=2
+X=runif(n, 0, 10)
+Y=runif(n, 0, 10)
+mod=lm(Y~X)
+print(cor(X, Y))
+plot(X, Y, pch=19)
+abline(mod)
+``` 
+It is related by 1
 

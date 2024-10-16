@@ -45,5 +45,36 @@ k = 0.02
 f. 
 
 ## 4.1.4
+a. 3. People who attended the shows
+b. 2. Proportion of those who attended the shows who bought merchandise
+c. 0.22
+d. 0.0414
+e. No, because it falls within the sample error
+f. 0.04, which is different but not by much
+g.
+```{r}
+trials=1000
+
+n=100
+p=0.25
+phat=22/100
+
+mu_p=p
+SE_p=sqrt(p*(1-p)/n)
+
+results=rep(0,trials)
+
+for(i in 1:n){
+  results=results+sample(c(1, 0), trials, replace = TRUE, prob = c(p, 1-p)) 
+}
+
+proportion=results/n
+
+hist(proportion, prob=TRUE, breaks=25)
+curve(dnorm(x, mean=mu_p, sd=SE_p), col="darkblue", lwd=2, add=TRUE, yaxt="n")
+abline(v=phat, col="red",lwd=3, lty=2 )
+print(trials)
+``` 
+It would not be abnormal
 
 ## 4.1.5 SKIP
