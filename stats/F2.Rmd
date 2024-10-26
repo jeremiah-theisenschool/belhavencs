@@ -14,10 +14,85 @@ b.
 
 x = 1.96*sqrt((p(1-p))/n) + p
 
-## 4.2.2 
+## 4.2.2  
+a. 4 
+b. phat = 0.2 
+SEp = 0.056
 
-## 4.2.3 
+c.
+0.10976 
+95% lies between 0.09 and 0.31 
+0.23 lies in that interval
 
-## 4.2.4 
+d.
+```{r}
+steak_survey=sample(c("YES", "NO"), 50, replace = TRUE, prob = c(0.23, 0.77))
+print(length(which(steak_survey=="YES")))
+``` 
+e. 
+phat = 0.24 
+SEp = 0.06 
+C95% = 0.118, (0.13, 0.35) 
+Yes it includes 0.23 
+
+f. This confidence interval  
+
+g.
+```{r}
+numsamp=100
+n=50
+p=0.23
+
+samp_phat = rep(NA, numsamp)
+samp_SE = rep(NA, numsamp)
+color_vec=rep(NA, numsamp)
+
+for(i in 1:numsamp){
+  samp = rbinom(1,n,p) # obtain a sample of size n  from the population
+  samp_phat[i] = samp/n    # Find the proportion for this sample
+  samp_SE[i] = sqrt(samp_phat[i]*(1-samp_phat[i])/n)  # Find the standard error
+}
+lower_vector = samp_phat - 1.96 * samp_SE
+upper_vector = samp_phat + 1.96 * samp_SE
+
+for (j in 1:numsamp){
+  color_vec[j]="red"
+  if(p>=lower_vector[j] & upper_vector[j]>=p){color_vec[j]="blue"}
+}
+plot(c(min(lower_vector),max(upper_vector)), c(0, 1 + numsamp), type = "n")
+for (i in 1:numsamp) lines( c(lower_vector[i], upper_vector[i]),c(i, i), lwd = 2, col=color_vec[i], add=TRUE)
+abline(v = p, lwd = 2, lty = 2)
+``` 
+Only a few, which makes sense.
+
+## 4.2.3  
+a. Wider
+b. Narrower
+
+## 4.2.4 SKIP
 
 ## 4.2.5
+```{r}
+military = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/military.csv")
+names(military)
+```
+a. 
+```{r}
+n=50
+index = sample(1:nrow(military), n)
+samp=military[index,]
+```
+b. 
+```{r}
+length(which(samp$branch=="army"))
+```
+phat = 19/50 = 0.38
+
+c. SEp = 0.0686 
+C95% = 0.13 = (0.25, 0.51)
+d. 
+e.
+```{r}
+length(which(military$branch=="army"))/nrow(military)
+```
+This is within the confidence interval

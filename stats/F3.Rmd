@@ -1,0 +1,99 @@
+---
+title: "F3"
+author: "Jeremiah Theisen"
+date: "2024-10-17"
+output: pdf_document
+---
+
+## 4.3.1 
+a. 
+phat =  0.64
+SEp = 0.096
+
+b. 0.18816
+
+c. (.45184, .8282), 0.5 fits in the range. The true proportion lies within this interval. The coin is more likely to be fair.
+
+## 4.3.2 
+a. phat = 0.14 
+SEp = 0.04907
+
+b. C = 0.096, (0.044, 0.236)
+c. 0.5 does not fall into that variable. 
+d.
+```{r}
+numsamp=1000
+  n=50
+  p=0.5
+
+  samp_phat = rep(NA, numsamp)
+
+  for(i in 1:numsamp){
+  samp = rbinom(1,n,p) # obtain a sample of size n  from the population
+  samp_phat[i] = samp/n    # Find the proportion for this sample
+}
+
+hist(samp_phat, xlim = c(0,1))
+abline(v = 0.14, lwd = 2, lty = 2, col = "red")
+``` 
+
+## 4.3.3 
+a. 
+p = 0.5 
+SEp = 0.034
+sd = 0.5
+
+USE SAMPLING ERROR
+b. 
+```{r} 
+1 - pnorm(122/212, mean = 0.5, sd = 0.03434)
+```
+c. 1%
+
+## 4.3.4 
+a. pvalue = 0.014 
+alpha = 0.05 
+pvalue < alpha
+
+b. Since alpha is greater, we reject the null hypothesis that candidates are tied, and conclude that our candidate has more than 0.5 support.
+
+
+## 4.3.5 SKIP
+
+## 4.3.6 
+a. H0: p = 0.6
+b. HA: p < 0.6 
+c. phat = 0.5
+d. mean = 0.6,  
+SEp = 0.0692 
+
+e.
+```{r} 
+pnorm(0.5, mean=0.6, sd=0.0693)
+``` 
+f. The pvalue is 0.0745. The pvalue is the probability that the proportion from the sample fits in the distribution calculated from the null hypothesis.
+g. No, the pvalue is less than alpha which is 0.05
+h. Type 2, to be incorrect the null hypothesis would be wrong but we did not reject it.
+
+## 4.3.7 SKIP
+
+## 4.3.8 SKIP
+
+## 4.3.9 SKIP
+
+## 4.3.10 
+a. 
+```{r}
+prop.test(16, 40, 
+    p=0.3, alternative="greater", correct=FALSE)
+```
+b. 
+```{r}
+prop.test(12, 60, 
+    p=0.45, alternative="less", correct=FALSE)
+```
+c. 
+```{r}
+prop.test(88, 100, 
+    p=0.5, alternative="two.sided", correct=FALSE)
+```

@@ -1,0 +1,50 @@
+---
+title: "C1"
+author: "Jeremiah Theisen"
+date: "2024-10-24"
+output: pdf_document
+---
+
+## 5.1.1  
+a. n, z*
+b. 
+phat = 0.4 
+SEp = 0.077 
+z* = 0.99 
+C99% = 1.996, (0.2004, 0.5996)
+
+
+## 5.1.2  
+a. ME = 1.996
+b. n > 637
+c. 638
+ 
+## 5.1.3 SKIP
+
+## 5.1.4
+a. z* = 1.96 
+b. n > 2401 
+c. 2402
+d. 
+```{r}
+n=2402
+p=runif(1,0.6,0.99)
+samp_zombie=sample(c("CURED", "nope"), n, replace=TRUE, prob=c(p, 1-p))
+length(which(samp_zombie=="CURED"))
+```
+e.  
+phat = 0.598 
+SEp = 0.01 
+C95% = 0.0196  
+
+f.
+n > 4144  
+```{r}
+n=4145
+p=runif(1,0.6,0.99)
+samp_zombie=sample(c("CURED", "nope"), n, replace=TRUE, prob=c(p, 1-p))
+length(which(samp_zombie=="CURED"))
+``` 
+phat = 0.604 
+SEp = 7.596 * 10^-3 
+C99% = 0.0196

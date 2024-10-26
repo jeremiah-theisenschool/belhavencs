@@ -1,0 +1,85 @@
+---
+title: "C2"
+author: "Jeremiah Theisen"
+date: "2024-10-24"
+output: pdf_document
+---
+
+## 5.2.1 
+a. phat = 0.193
+b. 42
+c. 
+```{r}
+raise_rate=0.193
+num_men=312
+num_women=216
+
+menraise=sample(c("RAISE", "NO"), num_men, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
+womenraise=sample(c("RAISE", "NO"), num_women, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
+
+d=length(which(menraise=="RAISE"))-length(which(womenraise=="RAISE"))
+print(d)
+```
+d. 
+```{r}
+observed_diff=42
+
+diff_vec=rep(NA,1000)
+
+for(i in 1:1000){
+	menraise=sample(c("RAISE", "NO"), num_men, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
+	womenraise=sample(c("RAISE", "NO"), num_women, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
+	d=length(which(menraise=="RAISE"))-length(which(womenraise=="RAISE"))
+	diff_vec[i]=d
+}	
+hist(diff_vec)
+abline(v = observed_diff, col="red", lwd=3, lty=2)
+print(observed_diff)
+```
+Very unlikely
+e. 
+```{r}
+length(which(diff_vec>=observed_diff))/1000
+```
+f. It is very unlikely to be random chance, it falls outside of 95%.
+
+## 5.2.2  SKIP
+
+## 5.2.3 
+a. 
+b. 
+c. 
+d. 
+e. 
+f.
+
+## 5.2.4 
+a. 
+b. 
+c. 
+d. 
+e. 
+f. 
+g.
+
+## 5.2.5 
+a. 
+b. 
+c. 
+d. 
+e. 
+f. 
+g. 
+h. 
+i. 
+j. 
+k. 
+l. 
+m. 
+n. 
+o. 
+p.
+
+## 5.2.6 SKIP
+
+## 5.2.7 SKIP
