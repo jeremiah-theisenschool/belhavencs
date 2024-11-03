@@ -1,0 +1,6 @@
+---
+title: "C4"
+author: "Jeremiah Theisen"
+date: "2024-10-29"
+output: pdf_document
+---

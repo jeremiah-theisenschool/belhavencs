@@ -1,0 +1,95 @@
+---
+title: "N1"
+author: "Jeremiah Theisen"
+date: "2024-10-31"
+output: pdf_document
+---
+
+## 6.1.1 SKIP
+
+
+## 6.1.2 
+```{r}
+ames = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/ames.csv")
+
+names(ames)
+``` 
+a. 
+```{r}
+n=30
+index = sample(1:nrow(ames), n)
+samp=ames[index,]
+samp$price
+```
+b. 
+```{r}
+sd(samp$price)
+```
+c.
+```{r}
+n=30
+index = sample(1:nrow(ames), n)
+samp=ames[index,]
+sd(samp$price)
+```
+
+d. 
+```{r}
+n=30
+trials=1000
+sdvec=rep(NA, trials)
+
+for(i in 1:trials){
+  index = sample(1:nrow(ames), n)
+  samp=ames[index,]
+  sdvec[i]=sd(samp$price)  
+}
+
+hist(sdvec, breaks=25)
+``` 
+The sds are skewed right, but most are in the middle, kind of like a normal distribution.
+e. 
+```{r}
+hist(sdvec, breaks=25)
+abline(v = sd(ames$price), col="red", lwd=3, lty=2)
+```  
+The actual standard deviation is close to the mean. 
+
+f.
+```{r}
+values = seq(-300000, 300000, length=100)
+
+plot(values, dnorm(values, mean=0, sd=sdvec[1]), type="l", lty=2)
+
+for (i in 2:trials){
+  lines(values, dnorm(values, mean=0, sd=sdvec[i])) 
+}
+```  
+There is a lot of variation. It is off the charts.
+
+g.
+```{r}
+n=500
+trials=1000
+sdvec500=rep(NA, trials)
+
+for(i in 1:trials){
+  index = sample(1:nrow(ames), n)
+  samp=ames[index,]
+  sdvec500[i]=sd(samp$price)  
+}
+
+hist(sdvec500, breaks=25)
+abline(v = sd(ames$price), col="red", lwd=3, lty=2)
+``` 
+The range is a lot smaller, and it is more normally distributed. 
+
+
+## 6.1.3
+a. 
+b. 
+c. 
+d. 
+
+## 6.1.5
+
