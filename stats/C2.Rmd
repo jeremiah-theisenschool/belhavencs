@@ -164,7 +164,7 @@ i.
 pnorm(2.5787, mean=0, sd=1)
 ``` 
 j. p-value = 0.004
-k. 
+k. p-value measures the probability that the observed difference, or a more extreme value, will occur given the null hypothesis.
 l. The p-value is smaller than 0.05, which is less than alpha, so we reject the null hypothesis
 m. Type 1, we would have rejected a true statement
 n. 
